@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Roadmap Details</title>
+	<style>
+		/* Styling for the page */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+		
+		.container {
+			background-color: white;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		
+		th {
+			background-color: #f2f2f2;
+			font-weight: bold;
+		}
+		
+		.status {
+			display: inline-block;
+			padding: 5px;
+			border-radius: 3px;
+			font-weight: bold;
+			color: white;
+			text-align: center;
+		}
+		
+		.in-progress {
+			background-color: #ffc107;
+		}
+		
+		.complete {
+			background-color: #28a745;
+		}
+		
+		.delayed {
+			background-color: #dc3545;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Roadmap Details</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th>Description</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Feature 1</td>
+					<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pharetra, eros a lacinia tincidunt, nisl magna sodales lorem, vel tincidunt orci massa ac velit.</td>
+					<td><span class="status in-progress">In Progress</span></td>
+				</tr>
+				<tr>
+					<td>Feature 2</td>
+					<td>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean a ipsum id nibh euismod ultricies.</td>
+					<td><span class="status complete">Complete</span></td>
+				</tr>
+				<tr>
+					<td>Feature 3</td>
+					<td>Etiam auctor feugiat enim, nec tristique sapien consequat id. Maecenas eget ex dolor.</td>
+					<td><span class="status delayed">Delayed</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create New Account</title>
+    <link rel="stylesheet" type="text/css" href="newac.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="LINK.js"></script>
+  </head>
+  <body>
+    <div class="head">
+        <img src="ASSET/FOOD FLOW.png">
+    </div>
+    <div class="create-account-box">
+      <h2>Create New Account</h2>
+      <form id="account-form">
+        <div class="user-box">
+          <input type="text" name="user_name" required="">
+          <label>User Name</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="company_name" required="">
+          <label>Company Name</label>
+        </div>
+        <div class="user-box">
+          <input type="tel" name="phone_number" required="">
+          <label>Phone Number</label>
+        </div>
+        <div class="user-box">
+          <input type="email" name="email" required="">
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="cin" required="">
+          <label>CIN (Corporation Identification Number)</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="company_address" required="">
+          <label>Company Address</label>
+        </div>
+        <div class="user-box">
+          <input type="text" name="wallet_id">
+          <label>Wallet ID (Optional)</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name="password">
+            <label>Password</label>
+        </div>
+        <div class="user-box">
+            <input type="password" name="confirm_password">
+            <label>Confirm Password</label>
+        </div>
+        <button type="submit">
+          Create
+        </button>
+      </form>
+    </div>
+
+    <script>
+      // Connect to the Ethereum network using Web3
+      const web3 = new Web3(Web3.givenProvider);
+
+      // Get the contract instance
+      const contractAddress = "0x123456789...";
+      const contractAbi = [...];
+      const contract = new web3.eth.Contract(contractAbi, contractAddress);
+
+      // Get the form element and listen for submit events
+      const form = document.getElementById("account-form");
+      form.addEventListener("submit", async (event)) => {
+        event.preventDefault();
+
+        // Get the form data
+        const formData = new FormData(event.target);
+        const userName = formData.get("user_name");
+        const companyName = formData.get("company_name");
+        const phoneNumber = formData.get("phone_number");
+        const email = formData.get("email");
+        const cin = formData.get("cin");
+        const companyAddress = formData.get("company_address");
+        const walletId = formData.get("wallet_id");
+        const password = formData.get("password");
+
+        // Check that the passwords match
+        const confirmPassword = formData.get("confirm_password");
+        if (password !== confirmPassword) {
+          alert("Passwords do not match");
+          return;
+        }
+
+         // Hash the password
+         const passwordHash = web3.utils.sha3(password);
+      
